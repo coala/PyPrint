@@ -1,4 +1,4 @@
 [run]
-omit = tests/*
+omit = tests/*, pyprint/Constants.py
 branch = True
 cover_pylib = False

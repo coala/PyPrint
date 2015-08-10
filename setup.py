@@ -3,6 +3,7 @@
 import sys
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
+from pyprint.Constants import VERSION
 
 
 class PyTest(TestCommand):
@@ -29,6 +30,7 @@ class PyTest(TestCommand):
 
 if __name__ == "__main__":
     setup(name='PyPrint',
+          version=VERSION,
           description='A library providing printing facilities for python '
                       'applications.',
           author="Lasse Schuirmann, Mischa Kr\xfcger",
