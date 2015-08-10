@@ -38,6 +38,6 @@ if __name__ == "__main__":
           platforms='any',
           packages=find_packages(exclude=["build.*", ".*tests.*", ".*tests"]),
           install_requires=["setuptools"],
-          license="AGPL v3",
+          license="GPL v3",
           tests_require=['pytest'],
           cmdclass={'test': PyTest})
