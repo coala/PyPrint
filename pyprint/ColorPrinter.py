@@ -21,19 +21,22 @@ class ColorPrinter(Printer):
         class handles this for you.
     """
 
-    def __init__(self, print_colored=True):
+    def __init__(self, print_colored=None):
         """
         Creates a new ColorPrinter.
 
         :param print_colored: Can be set to False to use uncolored printing
-                              only.
+                              only. If None prints colored only when supported.
         """
         Printer.__init__(self)
 
         self.print_colored = print_colored
 
     def _print(self, output, **kwargs):
-        if kwargs.get("color") is None or not self.print_colored:
+        if (
+                kwargs.get("color") is None or
+                (self.print_colored is None and not self.supports_colors)
+                or self.print_colored == False):
             return self._print_uncolored(output, **kwargs)
 
         try:
@@ -59,3 +62,17 @@ class ColorPrinter(Printer):
         :param kwargs: Arbitrary additional keyword arguments you might need.
         """
         raise NotImplementedError
+
+    @property
+    def supports_colors(self):
+        """
+        Returns whether color printing is currently supported or not.
+
+        Override this function to restrict default output behaviour with
+        colors.
+
+        By default color printing is supported every time.
+
+        :return: True if color printing is supported, False if not.
+        """
+        return True

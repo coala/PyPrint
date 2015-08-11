@@ -9,7 +9,13 @@ class ConsolePrinter(ColorPrinter):
 
     Note that pickling will not pickle the output member.
     """
-    def __init__(self, print_colored=platform.system() in ("Linux",)):
+    def __init__(self, print_colored=None):
+        """
+        Instantiates a new ConsolePrinter.
+
+        :param print_colored: Whether to print with colors or not. If None use
+                              colors if supported.
+        """
         ColorPrinter.__init__(self, print_colored)
 
     def _print_uncolored(self, output, **kwargs):
@@ -40,3 +46,7 @@ class ConsolePrinter(ColorPrinter):
             raise ValueError("Invalid color value.")
 
         print('\033[' + color_code + 'm' + output + '\033[0m', end="")
+
+    @property
+    def supports_colors(self):
+        return platform.system() in ("Linux",)
