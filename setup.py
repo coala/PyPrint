@@ -39,7 +39,7 @@ if __name__ == "__main__":
           maintainer_email='lasse.schuirmann@gmail.com, makman@alice.de',
           platforms='any',
           packages=find_packages(exclude=["build.*", ".*tests.*", ".*tests"]),
-          install_requires=["setuptools"],
+          install_requires=["setuptools", "colorama", "termcolor"],
           license="GPL v3",
           tests_require=['pytest'],
           cmdclass={'test': PyTest})
