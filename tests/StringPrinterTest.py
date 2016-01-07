@@ -4,6 +4,7 @@ from pyprint.StringPrinter import StringPrinter
 
 
 class StringPrinterTest(unittest.TestCase):
+
     def test_construction(self):
         uut = StringPrinter()
         self.assertEqual(uut.string, "")

@@ -5,6 +5,7 @@ from pyprint.FilePrinter import FilePrinter
 
 
 class FilePrinterTest(unittest.TestCase):
+
     def test_invalid_construction(self):
         self.assertRaises(TypeError, FilePrinter, 5)
 

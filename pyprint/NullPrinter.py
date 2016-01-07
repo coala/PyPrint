@@ -5,6 +5,7 @@ class NullPrinter(Printer):
     """
     A printer that dismisses all printed messages.
     """
+
     def __init__(self):
         """
         Instantiates a new NullPrinter.

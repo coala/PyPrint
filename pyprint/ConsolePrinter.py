@@ -10,6 +10,7 @@ class ConsolePrinter(ColorPrinter):
 
     Note that pickling will not pickle the output member.
     """
+
     def __init__(self, print_colored=None):
         """
         Instantiates a new ConsolePrinter.

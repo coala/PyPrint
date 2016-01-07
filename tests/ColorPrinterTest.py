@@ -4,6 +4,7 @@ from pyprint.ColorPrinter import ColorPrinter
 
 
 class TestColorPrinter(ColorPrinter):
+
     def _print_colored(self, output, color=None, **kwargs):
         pass
 
@@ -12,6 +13,7 @@ class TestColorPrinter(ColorPrinter):
 
 
 class ColorPrinterTest(unittest.TestCase):
+
     def test_printer_interface(self):
         uut = ColorPrinter()
 

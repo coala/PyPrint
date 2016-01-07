@@ -4,6 +4,7 @@ from pyprint.ClosableObject import ClosableObject, close_objects
 
 
 class ClosableObjectTest(unittest.TestCase):
+
     def setUp(self):
         self.uut = ClosableObject()
 

@@ -5,6 +5,7 @@ from pyprint.ContextManagers import retrieve_stdout
 
 
 class ConsolePrinterTest(unittest.TestCase):
+
     def test_printing(self):
         self.uut = ConsolePrinter(print_colored=True)
 

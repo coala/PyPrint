@@ -4,11 +4,13 @@ from pyprint.Printer import Printer
 
 
 class TestPrinter(Printer):
+
     def _print(self, output, somearg=""):
         return output + somearg
 
 
 class PrinterTest(unittest.TestCase):
+
     def test_printer_interface(self):
         self.uut = Printer()
         self.assertRaises(NotImplementedError, self.uut.print, "test")
