@@ -1,0 +1,28 @@
+[default]
+ignore = build/**
+enabled = false
+
+[auto_pep8]
+enabled = yeah
+# Correct PEP8
+bears = PEP8Bear
+files = **/*.py
+max_line_length = 80
+
+default_actions = PEP8Bear: ApplyPatchAction
+
+[auto_imports]
+enabled = yup
+# Correct imports and unused code. This has an own section since it may not be
+# executed in parallel with the PEP8Bear which yields the same results in many
+# cases. This way they're run sequentially not harming each other.
+bears = PyUnusedCodeBear, PyImportSortBear
+default_actions =
+    PyUnusedCodeBear: ApplyPatchAction,
+    PyImportSortBear: ApplyPatchAction
+
+[python]
+files = **/*.py
+bears = PyLintBear
+# Those yield a high rate of false positives
+pylint_disable = C0103
