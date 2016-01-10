@@ -22,6 +22,7 @@ matrix:
 install:
   - bash .ci/deps.${TRAVIS_OS_NAME}.sh
   - pip install pytest-cov
+  - pip install -r requirements.txt --upgrade
 
 script:
   - python setup.py test -a "--cov=pyprint"

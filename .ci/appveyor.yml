@@ -26,6 +26,7 @@ install:
   - "python -c \"import struct; print(struct.calcsize('P') * 8)\""
 
   - "%CMD_IN_ENV% pip -q install pytest-cov"
+  - "%CMD_IN_ENV% pip -q install -r requirements.txt --upgrade"
 
 build: false  # Not a C# project, build stuff at the test step instead.
 
