@@ -12,10 +12,6 @@ matrix:
       python: 3.4
     - os: linux
       python: 3.3
-    - os: linux
-      python: 3.2
-    - os: linux
-      python: pypy3
     - os: osx
       language: generic
       env:
@@ -32,18 +28,6 @@ matrix:
       language: generic
       env:
       - PYTHON_VERSION=3.3.6
-      - PYENV_ROOT=~/.pyenv
-      - PATH=$PYENV_ROOT/shims:$PATH:$PYENV_ROOT/bin
-    - os: osx
-      language: generic
-      env:
-      - PYTHON_VERSION=3.2.5
-      - PYENV_ROOT=~/.pyenv
-      - PATH=$PYENV_ROOT/shims:$PATH:$PYENV_ROOT/bin
-    - os: osx
-      language: generic
-      env:
-      - PYTHON_VERSION=pypy3-2.4.0
       - PYENV_ROOT=~/.pyenv
       - PATH=$PYENV_ROOT/shims:$PATH:$PYENV_ROOT/bin
 
