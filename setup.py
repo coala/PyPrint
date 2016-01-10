@@ -27,6 +27,9 @@ class PyTest(TestCommand):
         errno = pytest.main(self.pytest_args)
         sys.exit(errno)
 
+with open('requirements.txt') as requirements:
+    required = requirements.read().splitlines()
+
 
 if __name__ == "__main__":
     setup(name='PyPrint',
@@ -39,7 +42,7 @@ if __name__ == "__main__":
           maintainer_email='lasse.schuirmann@gmail.com, makman@alice.de',
           platforms='any',
           packages=find_packages(exclude=["build.*", ".*tests.*", ".*tests"]),
-          install_requires=["setuptools", "colorama", "termcolor"],
+          install_requires=required,
           license="GPL v3",
           tests_require=['pytest'],
           cmdclass={'test': PyTest})
