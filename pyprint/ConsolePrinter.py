@@ -10,6 +10,7 @@ class ConsolePrinter(ColorPrinter):
 
     Note that pickling will not pickle the output member.
     """
+    colorama_initialized = False
 
     def __init__(self, print_colored=None):
         """
@@ -19,7 +20,9 @@ class ConsolePrinter(ColorPrinter):
                               colors if supported.
         """
         ColorPrinter.__init__(self, print_colored)
-        colorama.init()
+        if not ConsolePrinter.colorama_initialized:
+            colorama.init()
+            ConsolePrinter.colorama_initialized = True
 
     def _print_uncolored(self, output, **kwargs):
         print(output, end="")
