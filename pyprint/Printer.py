@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class Printer:
     """
     A Printer is an object that can output (usually unformatted) text.

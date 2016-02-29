@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from contextlib import contextmanager, closing
 from io import StringIO
 import sys

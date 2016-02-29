@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def close_objects(*objs):
     """
     Determines for all given objects if an object is closable and closes
