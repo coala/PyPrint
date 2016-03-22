@@ -41,7 +41,7 @@ if __name__ == "__main__":
           maintainer='Lasse Schuirmann, Mischa Kr\xfcger',
           maintainer_email='lasse.schuirmann@gmail.com, makman@alice.de',
           platforms='any',
-          packages=find_packages(exclude=["build.*", ".*tests.*", ".*tests"]),
+          packages=find_packages(exclude=["build.*", "tests", "tests.*"]),
           package_data={'pyprint': ["VERSION"]},
           install_requires=required,
           license="GPL v3",
