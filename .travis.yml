@@ -27,3 +27,9 @@ install:
 script:
   - python setup.py test -a "--cov=pyprint"
   - bash .ci/deploy.${TRAVIS_OS_NAME}.sh
+
+notifications:
+  email: false
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/b9493488a4edb005c5c6
