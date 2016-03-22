@@ -19,6 +19,11 @@ matrix:
       - PYENV_ROOT=~/.pyenv
       - PATH=$PYENV_ROOT/shims:$PATH:$PYENV_ROOT/bin
 
+addons:
+  apt:
+    packages:
+    - espeak
+
 install:
   - bash .ci/deps.${TRAVIS_OS_NAME}.sh
   - pip install pytest-cov

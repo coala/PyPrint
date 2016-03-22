@@ -4,6 +4,7 @@ set -x
 # Install packages with brew
 brew update >/dev/null
 brew outdated pyenv || brew upgrade --quiet pyenv
+brew install espeak
 
 # Install required python version for this build
 pyenv install -ks $PYTHON_VERSION
